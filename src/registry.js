@@ -286,8 +286,8 @@ class CommandoRegistry {
 	 */
 	registerDefaultGroups() {
 		return this.registerGroups([
-			['commands', 'Commands', true],
-			['util', 'Utility']
+			['commands', '[🌌] Commands', true],
+			['util', '[🧰] Utility']
 		]);
 	}
 
