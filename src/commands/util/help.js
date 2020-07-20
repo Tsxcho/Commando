@@ -84,13 +84,13 @@ module.exports = class HelpCommand extends Command {
 					Use ${this.usage('<command>', null, null)} to view detailed information about a specific command.
 					Use ${this.usage('all', null, null)} to view a list of *all* commands, not just available ones.
 
-					__**${showAll ? 'All commands' : `Available commands in ${msg.guild || 'this DM'}`}**__
+					**${showAll ? 'All commands' : `Available commands in ${msg.guild || 'this DM'}`}**
 
 					${groups.filter(grp => grp.commands.some(cmd => !cmd.hidden && (showAll || cmd.isUsable(msg))))
 						.map(grp => stripIndents`
-							__${grp.name}__
+							**${grp.name}**
 							${grp.commands.filter(cmd => !cmd.hidden && (showAll || cmd.isUsable(msg)))
-								.map(cmd => `**${cmd.name}:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
+								.map(cmd => `**▫️ ${cmd.name}:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''}`).join('\n')
 							}
 						`).join('\n\n')
 					}
