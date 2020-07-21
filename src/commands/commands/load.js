@@ -14,6 +14,7 @@ module.exports = class LoadCommandCommand extends Command {
 				The argument must be full name of the command in the format of \`group:memberName\`.
 				Only the bot owner(s) may use this command.
 			`,
+			format: "`load <command>`",
 			examples: ['load some-command'],
 			ownerOnly: true,
 			guarded: true,
