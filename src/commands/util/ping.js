@@ -13,7 +13,7 @@ module.exports = class PingCommand extends Command {
 				duration: 10
 			},
 			format: "ping",
-			examples: ['.ping'],
+			examples: ['ping'],
 		});
 	}
 
