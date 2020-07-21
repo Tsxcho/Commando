@@ -14,7 +14,7 @@ module.exports = class DisableCommandCommand extends Command {
 				Only administrators may use this command.
 			`,
 			format: "`disable [command/group]`",
-			examples: ['disable util', 'disable Utility', 'disable prefix'],
+			examples: ['`disable util`', '`disable Utility`', '`disable prefix`'],
 			guarded: true,
 
 			args: [
