@@ -12,8 +12,8 @@ module.exports = class PingCommand extends Command {
 				usages: 5,
 				duration: 10
 			},
-			format: "`ping`",
-			examples: ['`.ping`'],
+			format: "ping",
+			examples: ['.ping'],
 		});
 	}
 
