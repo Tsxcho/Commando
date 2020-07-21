@@ -82,7 +82,7 @@ module.exports = class HelpCommand extends Command {
 						helpEmbed.addField(
 							`**${grp.name}**`, 
 							`${grp.commands.filter(cmd => !cmd.hidden && (showAll || cmd.isUsable(msg))).map(cmd => 
-								`⋆ **\`${msg.guild ? msg.guild.commandPrefix : ''}${cmd.name}\`:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''
+								`🢒 **\`${msg.guild ? msg.guild.commandPrefix : ''}${cmd.name}\`:** ${cmd.description}${cmd.nsfw ? ' (NSFW)' : ''
 							}`).join('\n')}`)
 				});
 				messages.push(await msg.author.send(helpEmbed))
