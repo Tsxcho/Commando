@@ -13,8 +13,8 @@ module.exports = class EnableCommandCommand extends Command {
 				The argument must be the name/ID (partial or whole) of a command or command group.
 				Only administrators may use this command.
 			`,
-			format: "`enable [command/group]`",
-			examples: ['`enable util`', '`enable Utility`', '`enable prefix`'],
+			format: "enable [command/group]",
+			examples: ['enable util', 'enable Utility`', 'enable prefix'],
 			guarded: true,
 
 			args: [
