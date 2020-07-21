@@ -15,8 +15,8 @@ module.exports = class HelpCommand extends Command {
 				The command may be part of a command name or a whole command name.
 				If it isn't specified, all available commands will be listed.
 			`,
-			format: "`help <command>`",
-			examples: ['`help`', '`help prefix`'],
+			format: "help <command>",
+			examples: ['help', 'help prefix'],
 			guarded: true,
 
 			args: [
@@ -41,10 +41,10 @@ module.exports = class HelpCommand extends Command {
 					let commandInfo = new MessageEmbed()
 					.setColor(`#55A9D9`)
 					.setTitle(`**${String(commands[0].name).substr(0,1).toUpperCase() + String(commands[0].name).substr(1)}** Command: `)
-					commandInfo.addField(`**Usage:** `, `${commands[0].format ? ` ${commands[0].format}` : ''}`)
+					commandInfo.addField(`**Usage:** `, `${commands[0].format ? `\`${commands[0].format}\`` : ''}`)
 					if(commands[0].details) commandInfo.addField(`**Description:**`, `${commands[0].details}`);
-					if(commands[0].aliases.length > 0) commandInfo.addField(`**Aliases:**`, `${commands[0].aliases.join(', ')}`);
-					if(commands[0].examples) commandInfo.addField(`**Examples:**`, `${commands[0].examples.join('\n')}`);
+					if(commands[0].aliases.length > 0) commandInfo.addField(`**Aliases:**`, `${commands[0].aliases.map(alias => `\`${alias}\``).join(`, `)}`);
+					if(commands[0].examples) commandInfo.addField(`**Examples:**`, `${commands[0].examples.map(example => `\`${example}\``).join('\n')}`);
 					messages.push(await msg.channel.send(commandInfo));
 				} catch(err) {
 					console.log(err)
