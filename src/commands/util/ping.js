@@ -11,7 +11,9 @@ module.exports = class PingCommand extends Command {
 			throttling: {
 				usages: 5,
 				duration: 10
-			}
+			},
+			format: "`ping`",
+			examples: ['`.ping`'],
 		});
 	}
 
