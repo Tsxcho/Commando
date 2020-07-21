@@ -12,7 +12,7 @@ module.exports = class ListGroupsCommand extends Command {
 			details: 'Only administrators may use this command.',
 			guarded: true,
 			format: "groups",
-			examples: [".groups"]
+			examples: ["groups"]
 		});
 	}
 
