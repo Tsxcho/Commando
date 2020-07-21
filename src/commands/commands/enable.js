@@ -14,7 +14,7 @@ module.exports = class EnableCommandCommand extends Command {
 				Only administrators may use this command.
 			`,
 			format: "`enable [command/group]`",
-			examples: ['enable util', 'enable Utility', 'enable prefix'],
+			examples: ['`enable util`', '`enable Utility`', '`enable prefix`'],
 			guarded: true,
 
 			args: [
