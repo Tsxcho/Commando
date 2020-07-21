@@ -25,7 +25,7 @@ module.exports = class EvalCommand extends Command {
 				}
 			],
 			format: "eval [code]",
-			examples: ['.eval 2+2']
+			examples: ['eval 2+2']
 		});
 
 		this.lastResult = null;
