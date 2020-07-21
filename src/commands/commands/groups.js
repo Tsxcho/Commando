@@ -10,7 +10,9 @@ module.exports = class ListGroupsCommand extends Command {
 			memberName: 'groups',
 			description: 'Lists all command groups.',
 			details: 'Only administrators may use this command.',
-			guarded: true
+			guarded: true,
+			format: "`groups`",
+			examples: "`.groups`"
 		});
 	}
 
@@ -20,11 +22,14 @@ module.exports = class ListGroupsCommand extends Command {
 	}
 
 	run(msg) {
-		return msg.reply(stripIndents`
+		return msg.channel.send({embed: {
+			description: `
 			__**Groups**__
 			${this.client.registry.groups.map(grp =>
 				`**${grp.name}:** ${grp.isEnabledIn(msg.guild) ? 'Enabled' : 'Disabled'}`
 			).join('\n')}
-		`);
+		`,
+		color: "#55A9D9"
+		}});
 	}
 };
