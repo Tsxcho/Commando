@@ -15,7 +15,7 @@ module.exports = class LoadCommandCommand extends Command {
 				Only the bot owner(s) may use this command.
 			`,
 			format: "`load <command>`",
-			examples: ['load some-command'],
+			examples: ['`load some-command`'],
 			ownerOnly: true,
 			guarded: true,
 
