@@ -44,7 +44,7 @@ module.exports = class HelpCommand extends Command {
 					commandInfo.addField(`**Usage:** `, `${commands[0].format ? `\`${commands[0].format}\`` : ''}`)
 					if(commands[0].details) commandInfo.addField(`**Description:**`, `${commands[0].details}`);
 					if(commands[0].aliases.length > 0) commandInfo.addField(`**Aliases:**`, `${commands[0].aliases.map(alias => `\`${alias}\``).join(`, `)}`);
-					if(commands[0].examples) commandInfo.addField(`**Examples:**`, `${commands[0].examples.map(example => `\`${example}\``).join('\n')}`);
+					if(commands[0].examples) commandInfo.addField(`**Examples:**`, `${commands[0].examples.map(example => `\`${msg.guild ? msg.guild.commandPrefix : ''}${example}\``).join('\n')}`);
 					messages.push(await msg.channel.send(commandInfo));
 				} catch(err) {
 					console.log(err)
