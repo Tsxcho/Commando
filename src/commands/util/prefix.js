@@ -8,14 +8,14 @@ module.exports = class PrefixCommand extends Command {
 			group: 'util',
 			memberName: 'prefix',
 			description: 'Shows or sets the command prefix.',
-			format: '[prefix/"default"/"none"]',
+			format: '`prefix [prefix/"default"/"none"]`',
 			details: oneLine`
 				If no prefix is provided, the current prefix will be shown.
 				If the prefix is "default", the prefix will be reset to the bot's default prefix.
 				If the prefix is "none", the prefix will be removed entirely, only allowing mentions to run commands.
 				Only administrators may change the prefix.
 			`,
-			examples: ['prefix', 'prefix -', 'prefix omg!', 'prefix default', 'prefix none'],
+			examples: ['`prefix`', '`prefix -`', '`prefix omg!`', '`prefix default`', '`prefix none`'],
 
 			args: [
 				{
