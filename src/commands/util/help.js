@@ -15,7 +15,8 @@ module.exports = class HelpCommand extends Command {
 				The command may be part of a command name or a whole command name.
 				If it isn't specified, all available commands will be listed.
 			`,
-			examples: ['help', 'help prefix'],
+			format: "`help <command>`",
+			examples: ['`help`', '`help prefix`'],
 			guarded: true,
 
 			args: [
@@ -46,6 +47,7 @@ module.exports = class HelpCommand extends Command {
 					if(commands[0].examples) commandInfo.addField(`**Examples:**`, `${commands[0].examples.join('\n')}`);
 					messages.push(await msg.channel.send(commandInfo));
 				} catch(err) {
+					console.log(err)
 					messages.push(await msg.reply('Unable to send help!'));
 				}
 				return messages;
