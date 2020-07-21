@@ -23,7 +23,9 @@ module.exports = class EvalCommand extends Command {
 					prompt: 'What code would you like to evaluate?',
 					type: 'string'
 				}
-			]
+			],
+			format: "`eval [code]`",
+			examples: ['`.eval 2+2`']
 		});
 
 		this.lastResult = null;
