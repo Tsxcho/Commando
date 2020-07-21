@@ -14,8 +14,8 @@ module.exports = class ReloadCommandCommand extends Command {
 				Providing a command group will reload all of the commands in that group.
 				Only the bot owner(s) may use this command.
 			`,
-			format: "`reload <command/group>`",
-			examples: ['`reload some-command`'],
+			format: "reload <command/group>",
+			examples: ['reload some-command'],
 			ownerOnly: true,
 			guarded: true,
 
